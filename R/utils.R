@@ -1,5 +1,7 @@
 .onAttach <- function(libname, pkgname) {
   packageStartupMessage("Welcome to clipr. See ?write_clip for advisories on writing to the clipboard in R.")
+  packageStartupMessage("Warning: In clipr 0.6.0:\n - return_new will default to FALSE to make it more pipe-friendly.\n - write_clip_tbl() will default to row.names = TRUE and col.names = TRUE")
+
 }
 
 # Determine system type
