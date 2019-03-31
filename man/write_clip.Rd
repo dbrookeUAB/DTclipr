@@ -2,11 +2,14 @@
 % Please edit documentation in R/clipboard.R
 \name{write_clip}
 \alias{write_clip}
+\alias{write_last_clip}
 \title{Write clipboard}
 \usage{
 write_clip(content, object_type = c("auto", "character", "table"),
   breaks = NULL, eos = NULL, return_new = TRUE,
   allow_non_interactive = Sys.getenv("CLIPR_ALLOW", interactive()), ...)
+
+write_last_clip(...)
 }
 \arguments{
 \item{content}{An object to be written to the system clipboard.}
@@ -45,6 +48,12 @@ Invisibly returns the original object
 \description{
 Write a character vector to the system clipboard
 }
+\section{Functions}{
+\itemize{
+\item \code{write_last_clip}: A convenince function to write [.Last.value] value to
+the clipboard
+}}
+
 \note{
 On X11 systems, \code{write_clip} will cause either xclip (preferred)
   or xsel to be called. Be aware that, by design, these processes will fork

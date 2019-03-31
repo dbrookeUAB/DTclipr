@@ -125,6 +125,13 @@ write_clip <- function(content, object_type = c("auto", "character", "table"),
   invisible(chosen_write_clip(content, object_type, breaks, eos, return_new, ...))
 }
 
+#' @describeIn write_clip A convenince function to write [.Last.value] value to
+#'   the clipboard
+#' @export
+write_last_clip <- function(...) {
+  write_clip(content = .Last.value, ...)
+}
+
 #' Clear clipboard
 #'
 #' Clear the system clipboard.
