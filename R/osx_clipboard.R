@@ -2,8 +2,8 @@
 # Adapted from https://github.com/jennybc/reprex/blob/master/R/clipboard.R
 osx_read_clip <- function() {
   con <- pipe("pbpaste")
-  content <- as.data.table(scan(con, what = character(), sep = "\n",
-                  blank.lines.skip = FALSE, quiet = TRUE))
+  content <- scan(con, what = character(), sep = "\n",
+                  blank.lines.skip = FALSE, quiet = TRUE)
   close(con)
   return(content)
 }

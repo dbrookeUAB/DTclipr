@@ -24,6 +24,7 @@ read_clip_tbl <- function(x = read_clip(), ...) {
   if (is.null(x))
     return(NULL)
 
+
   .dots <- list(...)
   .dots$file <- textConnection(paste0(x, collapse = "\n"))
 
@@ -46,5 +47,5 @@ read_clip_tbl <- function(x = read_clip(), ...) {
     .dots$strip.white <- TRUE
 
 
-  do.call(utils::read.table, args = .dots)
+  as.data.table(do.call(utils::read.table, args = .dots))
 }
