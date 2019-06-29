@@ -19,6 +19,7 @@
 #'   clipboard is empty, returns `NULL`
 #'
 #' @export
+#' @import data.table
 read_clip_tbl <- function(x = read_clip(), ...) {
   if (is.null(x))
     return(NULL)
